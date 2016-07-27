@@ -1,11 +1,16 @@
+require 'yaml'
+
 class Yamler
   def initialize
     @hash = {}
   end
 
-  def add_string(key, value, locale_code, options={})
+  def add_string(key, value, options={})
     seperator = options['seperator'] || '.'
-    keys = key.split(seperator).unshift(locale_code)
+    keys = key.split(seperator)
+
+    keys.unshift(options[:locale_code]) if options[:locale_code]
+
     @hash = add_to_hash(keys, value)
   end
 
@@ -18,7 +23,11 @@ class Yamler
   end
 
   def to_file(path)
-    File.open(path, 'w') { |file| file.write to_yaml }
+    file = File.open(path, 'w')
+    file.write self.to_yaml
+    file
+  ensure
+    file.close
   end
 
   private
