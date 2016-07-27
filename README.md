@@ -8,7 +8,7 @@ Ruby gem to build I18n YAML files
 Add this line to your application's Gemfile:
 
 ``` ruby
-gem "ocman", :git => 'git@github.com:tt-laboratories/ocman.git'
+gem "yamler", :git => 'git@github.com:tt-laboratories/yamler.git'
 ```
 
 ## Usage
