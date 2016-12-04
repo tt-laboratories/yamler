@@ -6,7 +6,7 @@ class Yamler
   end
 
   def add_string(key, value, options={})
-    seperator = options['seperator'] || '.'
+    seperator = options[:seperator] || '.'
     keys = key.split(seperator)
 
     keys.unshift(options[:locale_code]) if options[:locale_code]
