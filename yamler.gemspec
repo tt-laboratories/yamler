@@ -1,7 +1,7 @@
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "yamler"
-  s.version     = "0.0.2"
+  s.version     = "0.1.0"
   s.authors     = ["Toptranslation Tech"]
   s.email       = ["tech@toptranslation.com"]
   s.homepage    = "https://www.toptranslation.com"
