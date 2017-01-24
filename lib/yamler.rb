@@ -39,7 +39,7 @@ class Yamler
     else
       if keys.empty?
         if array_index
-          if result.keys.first == first_key
+          if result.has_key?(first_key)
              result[first_key][array_index] = value
           else
             result[first_key] = [].insert(array_index, value)
