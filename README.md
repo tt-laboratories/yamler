@@ -28,7 +28,7 @@ add_string(<key>, <value>, <options>)
 
 The key is a string which contains the list of keys seperated by a seperator (by default '.' by default).
 
-The root element can be set with the options (nil by default).
+The root element, separator and array_index can be set with the options (nil by default).
 
 Example:
 
@@ -49,6 +49,14 @@ Example with optional seperator:
 ```
 >> y.add_string('foo|bar|title', 'Hello world', seperator: '|')
 => {"foo"=>{"bar"=>{"title"=>"Hello world"}}}
+```
+
+
+Example with optional array_index:
+
+```
+>> y.add_string('foo.bar.title', 'Hello world', array_index: 0)
+=> {"foo"=>{"bar"=>{"title"=>["Hello world"]}}}}
 ```
 
 ### Creating a YAML-file
